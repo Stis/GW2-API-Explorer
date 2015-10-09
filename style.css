@@ -1,0 +1,28 @@
+  body {
+    background: #666;
+    color: #CCC;
+  }
+  #menu {
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    overflow:auto;
+    background: #555;
+  }
+  #content { 
+    position:fixed;
+    top:0;
+    left:200px;
+    bottom:0;
+    right:0;
+    overflow:auto;
+  }
+  .string { color: #2ECC70; }
+  .number { color: #FF6100; }
+  .boolean { color: #FF99FF; }
+  .null { color: #AAA; }
+  .key { color: #FFF; }
+  .locAw { color: #00FF00; }
+  .disab { opacity:.4; text-decoration: line-through; }
+  .auth { font-weight : bold; }
