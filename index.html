@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="shortcut icon" type="image/png" href="" />
+  <title>GW2 API Explorer</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="https://raw.githubusercontent.com/nmss/gw2-api-wrapper/master/gw2-api-wrapper.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+  <div id="menu">
+    <div id="langues">
+      <img class="flag disab" lang="en" alt="English" title="English" src="https://www.iconfinder.com/data/icons/fatcow/16/flag_great_britain.png" /> 
+      <img class="flag disab" lang="es" alt="Español" title="Español" src="https://www.iconfinder.com/data/icons/fatcow/16/flag_spain.png"  /> 
+      <img class="flag disab" lang="de" alt="Deutsch" title="Deutsch" src="https://www.iconfinder.com/data/icons/fatcow/16x16/flag_germany.png"  /> 
+      <img class="flag disab" lang="fr" alt="Français" title="Français" src="https://www.iconfinder.com/data/icons/fatcow/16/flag_france.png"  /> 
+      <img class="flag disab" lang="ko" alt="한국의" title="한국의" src="https://www.iconfinder.com/data/icons/fatcow/16/flag_south_korea.png"  /> 
+      <img class="flag disab" lang="zh" alt="华人" title="华人" src="https://www.iconfinder.com/data/icons/fatcow/16/flag_china.png"  />
+    </div>
+    <div id="comptes">
+    </div>
+    <br><br>
+    <div id="endpoints">
+      Endpoints :<br/><br />
+      <input type="radio" name="endpoint" value="account">                          <label class="auth">Compte</label><br>
+        <input type="radio" name="endpoint" value="account/bank">                   <label class="auth">Banque</label><br>
+        <input type="radio" name="endpoint" value="account/dyes">                   <label class="auth">Teintures</label><br>
+        <input type="radio" name="endpoint" value="account/materials">              <label class="auth">Matériaux</label><br>
+        <input type="radio" name="endpoint" value="account/skins">                  <label class="auth">Garde-robe</label><br>
+        <input type="radio" name="endpoint" value="account/wallet">                 <label class="auth">Portefeuille</label><br>
+      <input type="radio" name="endpoint" value="achievements">                     <label class="locAw">Succès</label><br>
+      <input type="radio" name="endpoint" value="build">                            <label>Version</label><br>
+      <input type="radio" name="endpoint" value="characters">                       <label class="auth">Personnages</label><br>
+        <input type="radio" name="endpoint" value="characters/:id/equipment">       <label class="auth">Équipement</label><br>
+        <input type="radio" name="endpoint" value="characters/:id/inventory">       <label class="auth">Inventaire</label><br>
+        <input type="radio" name="endpoint" value="characters/:id/recipes">         <label class="auth disab">Recettes</label><br>
+        <input type="radio" name="endpoint" value="characters/:id/specializations"> <label class="auth">Spécialisations</label><br>
+      <input type="radio" name="endpoint" value="colors">                           <label class="locAw">Couleurs</label><br>
+      <input type="radio" name="endpoint" value="commerce/exchange">                <label>Échange</label><br>
+      <input type="radio" name="endpoint" value="commerce/listings">                <label>Listes</label><br>
+      <input type="radio" name="endpoint" value="commerce/prices">                  <label>Prix</label><br>
+      <input type="radio" name="endpoint" value="commerce/transactions">            <label class="auth">Lion Noir</label><br>
+      <input type="radio" name="endpoint" value="continents">                       <label class="locAw">Continents</label><br>
+      <input type="radio" name="endpoint" value="currencies">                       <label class="locAw">Monnaies</label><br>
+      <input type="radio" name="endpoint" value="events">                           <label class="locAw disab">Évènements</label><br>
+      <input type="radio" name="endpoint" value="events-state">                     <label class="disab">État d'évènement</label><br>
+      <input type="radio" name="endpoint" value="files">                            <label>Fichiers</label><br>
+      <input type="radio" name="endpoint" value="guild/:id">                        <label class="disab">Guilde</label><br>
+        <input type="radio" name="endpoint" value="guild/:id/inventory">            <label class="disab">Inventaire</label><br>
+        <input type="radio" name="endpoint" value="guild/:id/log">                  <label class="disab">Journal</label><br>
+        <input type="radio" name="endpoint" value="guild/:id/members">              <label class="disab">Membres</label><br>
+        <input type="radio" name="endpoint" value="guild/:id/ranks">                <label class="disab">Rangs</label><br>
+        <input type="radio" name="endpoint" value="guild/permissions">              <label class="locAw disab">Permissions</label><br>
+        <input type="radio" name="endpoint" value="guild/upgrades">                 <label class="locAw disab">Améliorations</label><br>
+      <input type="radio" name="endpoint" value="items">                            <label class="locAw">Objets</label><br>
+      <input type="radio" name="endpoint" value="leaderboards">                     <label class="disab">Classements</label><br>
+      <input type="radio" name="endpoint" value="maps">                             <label class="locAw">Cartes</label><br>
+      <input type="radio" name="endpoint" value="materials">                        <label class="locAw">Matériaux</label><br>
+      <input type="radio" name="endpoint" value="pvp">                              <label class="auth">JcJ</label><br>
+        <input type="radio" name="endpoint" value="pvp/games">                      <label class="auth">Parties JcJ</label><br>
+        <input type="radio" name="endpoint" value="pvp/stats">                      <label class="auth">Stat. JcJ</label><br>
+      <input type="radio" name="endpoint" value="quaggans">                         <label>Quaggans</label><br>
+      <input type="radio" name="endpoint" value="recipes">                          <label>Recettes</label><br>
+        <input type="radio" name="endpoint" value="recipes/search">                 <label>Recherche de recette</label><br>
+      <input type="radio" name="endpoint" value="skills">                           <label class="disab">Compétences</label><br>
+      <input type="radio" name="endpoint" value="skins">                            <label class="locAw">Apparences</label><br>
+      <input type="radio" name="endpoint" value="specializations">                  <label class="locAw">Spécialisations</label><br>
+      <input type="radio" name="endpoint" value="tokeninfo">                        <label class="auth">Info. clé</label><br>
+      <input type="radio" name="endpoint" value="traits">                           <label class="locAw">Aptitudes</label><br>
+      <input type="radio" name="endpoint" value="traits-beta">                      <label class="locAw">Aptitudes-béta</label><br>
+      <input type="radio" name="endpoint" value="worlds">                           <label class="locAw">Mondes</label><br>
+      <input type="radio" name="endpoint" value="wvw/matches">                      <label>Matchs McM</label><br>
+      <input type="radio" name="endpoint" value="wvw/objectives">                   <label class="locAw">Objectifs McM</label><br>
+    </div>
+    <br><br>
+    <div id="legend">
+      <ul>Légende :
+        <li class="locAw">Local aware</li>
+        <li class="disab">Disabled</li>
+        <li class="auth">Auth required</li>
+      </ul>
+    </div>
+  </div>
+  <div id="content">
+   <pre id="dispResult"></pre>
+ </div>
+</body>
+</html>
