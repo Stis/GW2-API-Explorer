@@ -1,34 +1,33 @@
-  $(window).on("hashchange", function() {
-    getGuids();
-  });
+$(window).on("hashchange", getGuids);
 
-  function getGuids() {
-    if (!location.hash) {
-      return JSON.parse(localStorage.getItem("guids") || "[]");
-    }
-    var guids = location.hash.slice(1).split(",");
-    localStorage.setItem("guids", JSON.stringify(guids));
-    history.replaceState(undefined, document.title, location.href.slice(0, location.href.indexOf("#")));
-    history.back()
-    return guids;
+function getGuids() {
+  if (!location.hash) {
+    return JSON.parse(localStorage.getItem("guids") || "[]");
   }
+  var guids = location.hash.slice(1).split(",");
+  localStorage.setItem("guids", JSON.stringify(guids));
+  history.replaceState(undefined, document.title, location.href.slice(0, location.href.indexOf("#")));
+  history.back();
+  return guids;
+}
 
-  $.each(getGuids(), function(i, key) {
-    new Api({key:key}).getAccount().then(result => {$("#comptes").append("<input type=\"radio\" name=\"compte\" value=\""+key+"\">"+result.name+"<br>");});
+$.each(getGuids(), function(i, key) {
+  new Api({key:key}).getAccount().then(result => {$("#comptes").append("<input type=\"radio\" name=\"compte\" value=\""+key+"\">"+result.name+"<br>");});
+});
+
+$(window).load(function() {
+  var lang="";
+  $("input").change(function() {
+    if ($("input[name=compte]:checked") && $("input[name=endpoint]:checked")) {
+      $("#dispResult").empty();
+      new Api({key:$("input[name=compte]:checked").val()}).get($("input[name=endpoint]:checked").val()).then(result => {$("#dispResult").html(syntaxHighlight(result));});}
   });
-  $(window).load(function() {
-    var lang="";
-    $("input").change(function() {
-      if ($("input[name=compte]:checked") && $("input[name=endpoint]:checked")) {
-        $("#dispResult").empty();
-        new Api({key:$("input[name=compte]:checked").val()}).get($("input[name=endpoint]:checked").val()).then(result => {$("#dispResult").html(syntaxHighlight(result));});}
-      });
-    $(".flag").click(function() {
-      $(".flag:not(.disab)").addClass("disab");
-      $(this).removeClass("disab");
-      lang = "&lang="+$(this).attr("lang");
-    });
+  $(".flag").click(function() {
+    $(".flag:not(.disab)").addClass("disab");
+    $(this).removeClass("disab");
+    lang = "&lang="+$(this).attr("lang");
   });
+});
 
 //JSON syntax highlighting. Found this somewhere on stackoverflow
 function syntaxHighlight(json) {

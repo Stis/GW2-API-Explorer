@@ -6,7 +6,7 @@
   <title>GW2 API Explorer</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script type="text/javascript" src="https://raw.githubusercontent.com/nmss/gw2-api-wrapper/master/gw2-api-wrapper.js"></script>
+  <script type="application/javascript; version=1.7" src="https://raw.githubusercontent.com/nmss/gw2-api-wrapper/master/gw2-api-wrapper.js"></script>
   <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
@@ -25,9 +25,11 @@
     <div id="endpoints">
       Endpoints :<br/><br />
       <input type="radio" name="endpoint" value="account">                          <label class="auth">Compte</label><br>
+        <input type="radio" name="endpoint" value="account/achievements">           <label class="auth">Succès</label><br>
         <input type="radio" name="endpoint" value="account/bank">                   <label class="auth">Banque</label><br>
         <input type="radio" name="endpoint" value="account/dyes">                   <label class="auth">Teintures</label><br>
         <input type="radio" name="endpoint" value="account/materials">              <label class="auth">Matériaux</label><br>
+        <input type="radio" name="endpoint" value="account/minis">                  <label class="auth">Miniatures</label><br>
         <input type="radio" name="endpoint" value="account/skins">                  <label class="auth">Garde-robe</label><br>
         <input type="radio" name="endpoint" value="account/wallet">                 <label class="auth">Portefeuille</label><br>
       <input type="radio" name="endpoint" value="achievements">                     <label class="locAw">Succès</label><br>
@@ -71,6 +73,7 @@
       <input type="radio" name="endpoint" value="traits">                           <label class="locAw">Aptitudes</label><br>
       <input type="radio" name="endpoint" value="traits-beta">                      <label class="locAw">Aptitudes-béta</label><br>
       <input type="radio" name="endpoint" value="worlds">                           <label class="locAw">Mondes</label><br>
+      <input type="radio" name="endpoint" value="wvw/abilities ">                   <label class="locAw disab">Capacités McM</label><br>
       <input type="radio" name="endpoint" value="wvw/matches">                      <label>Matchs McM</label><br>
       <input type="radio" name="endpoint" value="wvw/objectives">                   <label class="locAw">Objectifs McM</label><br>
     </div>
