@@ -12,7 +12,7 @@ function getGuids() {
 }
 
 $.each(getGuids(), function(i, key) {
-  new Api({key:key}).getAccount().then(result => {$("#comptes").append("<input type=\"radio\" name=\"compte\" value=\""+key+"\">"+result.name+"<br>");});
+  new Api({key:key}).get("Account").then(result => {$("#comptes").append("<input type=\"radio\" name=\"compte\" value=\""+key+"\">"+result.name+"<br>");});
 });
 
 $(window).load(function() {
