@@ -14,7 +14,7 @@ ul { margin-left: -20px; }
 .locAw { color: #00FF00; }
 .disab { opacity:.4; text-decoration: line-through; }
 .auth { font-weight : bold; }
-#content { 
+#content {
   position:fixed;
   top:0;
   left:200px;
