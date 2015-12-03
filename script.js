@@ -16,16 +16,19 @@ $.each(getGuids(), function(i, key) {
 });
 
 $(window).load(function() {
-  var lang="";
   $("input").change(function() {
     if ($("input[name=compte]:checked") && $("input[name=endpoint]:checked")) {
       $("#dispResult").empty();
-      new Api({key:$("input[name=compte]:checked").val()}).get($("input[name=endpoint]:checked").val()).then(result => {$("#dispResult").html(syntaxHighlight(result));});}
+      var params = [];
+      var ids = {ids: $("#ids").val()};
+      var lang = {lang: $(".flag:not(.disab)").attr("lang")};
+      if ($("#ids").val() == "") {} else {params = params.concat(ids);}
+      if ($(".flag:not(.disab)").length < 0) {} else {params = params.concat(lang);}
+      new Api({key:$("input[name=compte]:checked").val()}).get($("input[name=endpoint]:checked").val(),params).then(result => {$("#dispResult").html(syntaxHighlight(result));});}
   });
   $(".flag").click(function() {
     $(".flag:not(.disab)").addClass("disab");
     $(this).removeClass("disab");
-    lang = "&lang="+$(this).attr("lang");
   });
 });
 
