@@ -9,6 +9,7 @@ body {
   bottom:0;
   overflow:auto;
   background: #555;
+  min-width: 160px;
 }
 ul { margin-left: -20px; }
 .locAw { color: #00FF00; }

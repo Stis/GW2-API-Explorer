@@ -16,19 +16,16 @@ $.each(getGuids(), function(i, key) {
 });
 
 $(window).load(function() {
-  $("input").change(function() {
-    if ($("input[name=compte]:checked") && $("input[name=endpoint]:checked")) {
-      $("#dispResult").empty();
-      var params = [];
-      var ids = {ids: $("#ids").val()};
-      var lang = {lang: $(".flag:not(.disab)").attr("lang")};
-      if ($("#ids").val() == "") {} else {params = params.concat(ids);}
-      if ($(".flag:not(.disab)").length < 0) {} else {params = params.concat(lang);}
-      new Api({key:$("input[name=compte]:checked").val()}).get($("input[name=endpoint]:checked").val(),params).then(result => {$("#dispResult").html(syntaxHighlight(result));});}
-  });
   $(".flag").click(function() {
     $(".flag:not(.disab)").addClass("disab");
     $(this).removeClass("disab");
+  });
+  $("input").change(function() {
+    $("#dispResult").empty();
+    var params = {};
+    if ($("#ids").val() !== "") {params.ids = $("#ids").val();}
+    if ($(".flag:not(.disab)").length > 0) {params.lang = $(".flag:not(.disab)").attr("lang");}
+    new Api({key:$("input[name=compte]:checked").val()}).get($("input[name=endpoint]:checked").val(),params).then(result => {$("#dispResult").html(syntaxHighlight(result));});
   });
 });
 
