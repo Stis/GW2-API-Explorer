@@ -11,8 +11,10 @@ function getGuids() {
   return guids;
 }
 
+var accounts = { undefined: new Api() };
 $.each(getGuids(), function(i, key) {
-  new Api({key:key}).get("Account").then(result => {$("#comptes").append("<input type=\"radio\" name=\"compte\" value=\""+key+"\">"+result.name+"<br>");});
+  accounts[key] = new Api({key:key});
+  accounts[key].get("Account").then(result => {$("#comptes").append("<input type=\"radio\" name=\"compte\" value=\""+key+"\">"+result.name+"<br>");});
 });
 
 $(window).load(function() {
@@ -25,7 +27,7 @@ $(window).load(function() {
     var params = {};
     if ($("#ids").val() !== "") {params.ids = $("#ids").val();}
     if ($(".flag:not(.disab)").length > 0) {params.lang = $(".flag:not(.disab)").attr("lang");}
-    new Api({key:$("input[name=compte]:checked").val()}).get($("input[name=endpoint]:checked").val(),params).then(result => {$("#dispResult").html(syntaxHighlight(result));});
+    accounts[$("input[name=compte]:checked").val()].get($("input[name=endpoint]:checked").val(),params).then(result => {$("#dispResult").html(syntaxHighlight(result));});
   });
 });
 
