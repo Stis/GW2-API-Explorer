@@ -1,36 +1,3 @@
-$(window).on("hashchange", getGuids);
-
-function getGuids() {
-  if (!location.hash) {
-    return JSON.parse(localStorage.getItem("guids") || "[]");
-  }
-  var guids = location.hash.slice(1).split(",");
-  localStorage.setItem("guids", JSON.stringify(guids));
-  history.replaceState(undefined, document.title, location.href.slice(0, location.href.indexOf("#")));
-  history.back();
-  return guids;
-}
-
-var accounts = { undefined: new Api() };
-$.each(getGuids(), function(i, key) {
-  accounts[key] = new Api({key:key});
-  accounts[key].get("Account").then(result => {$("#comptes").append("<input type=\"radio\" name=\"compte\" value=\""+key+"\">"+result.name+"<br>");});
-});
-
-$(window).load(function() {
-  $(".flag").click(function() {
-    $(".flag:not(.disab)").addClass("disab");
-    $(this).removeClass("disab");
-  });
-  $("input").change(function() {
-    $("#dispResult").empty();
-    var params = {};
-    if ($("#ids").val() !== "") {params.ids = $("#ids").val();}
-    if ($(".flag:not(.disab)").length > 0) {params.lang = $(".flag:not(.disab)").attr("lang");}
-    accounts[$("input[name=compte]:checked").val()].get($("input[name=endpoint]:checked").val(),params).then(result => {$("#dispResult").html(syntaxHighlight(result));});
-  });
-});
-
 //JSON syntax highlighting. Found this somewhere on stackoverflow
 function syntaxHighlight(json) {
   if (typeof json != 'string') {
@@ -53,3 +20,38 @@ function syntaxHighlight(json) {
     return '<span class="' + cls + '">' + match + '</span>';
   });
 }
+
+var guids = JSON.parse(localStorage.getItem("guids") || "[]");
+var accounts = { undefined: new Api() };
+$.each(guids, function(i, key) {
+  accounts[key] = new Api({key:key});
+  accounts[key].get("Account").then(result => {$("#comptes").append("<input type=\"radio\" name=\"compte\" value=\""+key+"\">"+result.name+"<br>");});
+});
+
+$(window).load(function() {
+  if (guids) {
+    $.each(guids, function(i, key) {
+      $("#keyList").append(key+"\n");
+    });
+    $("#keyList").html($("#keyList").val().replace(/\n$/, ""));
+  }
+  $("#saveKeys").click(function() {
+    guids = $("#keyList").val().replace("#","").split(/\n| |,/);
+    localStorage.setItem("guids", JSON.stringify(guids));
+    location.reload(true);
+  });
+  $("#delKeys").click(function() {
+    localStorage.removeItem("guids");
+    location.reload();
+  });
+  $(".flag").click(function() {
+    $(".flag").addClass("disab");
+    $(this).removeClass("disab");
+  });
+  $("input").change(function() {
+    var params = {};
+    if ($("#ids").val() !== "") {params.ids = $("#ids").val();}
+    if ($(".flag:not(.disab)").length > 0) {params.lang = $(".flag:not(.disab)").attr("lang");}
+    accounts[$("input[name=compte]:checked").val()].get($("input[name=endpoint]:checked").val(),params).then(result => {$("#content").html($("<pre/>").html(syntaxHighlight(result)));});
+  });
+});

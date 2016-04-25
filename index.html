@@ -5,7 +5,7 @@
   <link rel="shortcut icon" type="image/png" href="" />
   <title>GW2 API Explorer</title>
   <link rel="stylesheet" type="text/css" href="style.css">
-  <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script type="text/javascript" src="jquery-2.2.3.min.js"></script>
   <script type="text/javascript" src="https://rawgit.com/nmss/gw2-api-wrapper/master/gw2-api-wrapper.js"></script>
   <script type="text/javascript" src="script.js"></script>
 </head>
@@ -106,7 +106,9 @@
     </div>
   </div>
   <div id="content">
-   <pre id="dispResult"></pre>
- </div>
+    <textarea id="keyList" placeholder="Insérez votre clé d'API ici. Si plusieurs, séparées par une espace, une virgule ou un retour à la ligne."></textarea><br />
+    <button id="saveKeys">    Sauver</button>
+    <button id="delKeys">Effacer    </button>
+  </div>
 </body>
 </html>

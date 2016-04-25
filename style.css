@@ -1,30 +1,65 @@
+@font-face {
+    font-family: "CronosPro";
+    src: url("font/cronospro-regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "CronosPro";
+    src: url("font/cronospro-italic-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: "CronosPro";
+    src: url("font/cronospro-semibold-webfont.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: "CronosPro";
+    src: url("font/cronospro-semibolditalic-webfont.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
+}
+* {
+    font-family: CronosPro;
+}
 body {
-  background: #666;
-  color: #CCC;
+  background-color: #555;
+  color: #CACACA;
 }
 #menu {
-  position:fixed;
-  left:0;
-  top:0;
-  bottom:0;
-  overflow:auto;
-  background: #555;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow: auto;
+  background-color: #444;
   min-width: 160px;
 }
 ul { margin-left: -20px; }
 .locAw { color: #00FF00; }
-.disab { opacity:.4; text-decoration: line-through; }
+.disab { opacity: .4; text-decoration: line-through; }
 .auth { font-weight : bold; }
-#content {
-  position:fixed;
-  top:0;
-  left:200px;
-  bottom:0;
-  right:0;
-  overflow:auto;
-}
+#content { margin-left: 200px; }
 .string { color: #2ECC70; }
 .number { color: #FF6100; }
 .boolean { color: #FF99FF; }
 .null { color: #AAA; }
 .key { color: #FFF; }
+#keyList {
+    height: 95px;
+    width: 724px;
+    background-color: #CCC;
+    border: none;
+}
+#saveKeys, #delKeys {
+    cursor: pointer;
+    background-color: #CCC;
+    border: none;
+    border-radius: 9px 0 0 9px;
+    padding: 1px;
+    margin: 4px -2px 0 -2px;
+}
+#delKeys { border-radius: 0 9px 9px 0; }
