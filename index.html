@@ -22,7 +22,7 @@
     <div id="comptes">
     </div>
     <br>
-    <div id="params"><input id="ids" type="text"></div>
+    <div id="params"><input id="ids" type="text" placeholder="IDa,IDb,etc."></div>
     <br>
     <div id="endpoints">
       <input type="radio" name="endpoint" value="account">                          <label class="auth">Compte</label><br>
@@ -33,6 +33,7 @@
         <input type="radio" name="endpoint" value="account/materials">              <label class="auth">Matériaux</label><br>
         <input type="radio" name="endpoint" value="account/minis">                  <label class="auth">Miniatures</label><br>
         <input type="radio" name="endpoint" value="account/skins">                  <label class="auth">Garde-robe</label><br>
+        <input type="radio" name="endpoint" value="account/titles">                 <label class="auth disab">Titres</label><br>
         <input type="radio" name="endpoint" value="account/wallet">                 <label class="auth">Portefeuille</label><br>
       <input type="radio" name="endpoint" value="achievements">                     <label class="locAw">Succès</label><br>
         <input type="radio" name="endpoint" value="achievements/categories">        <label class="locAw">Catégories</label><br>
@@ -40,11 +41,11 @@
           <input type="radio" name="endpoint" value="achievements/daily/tomorrow">  <label>Lendemain</label><br>
         <input type="radio" name="endpoint" value="achievements/groups">            <label class="locAw">Groupes</label><br>
       <input type="radio" name="endpoint" value="build">                            <label>Version</label><br>
-      <input type="radio" name="endpoint" value="characters">                       <label class="auth">Personnages</label><br>
-        <input type="radio" name="endpoint" value="characters/:id/equipment">       <label class="auth">Équipement</label><br>
-        <input type="radio" name="endpoint" value="characters/:id/inventory">       <label class="auth">Inventaire</label><br>
-        <input type="radio" name="endpoint" value="characters/:id/recipes">         <label class="auth">Recettes</label><br>
-        <input type="radio" name="endpoint" value="characters/:id/specializations"> <label class="auth">Spécialisations</label><br>
+      <input type="radio" name="endpoint" value="characters">                       <label class="auth disab">Personnages</label><br>
+        <input type="radio" name="endpoint" value="characters/:id/equipment">       <label class="auth disab">Équipement</label><br>
+        <input type="radio" name="endpoint" value="characters/:id/inventory">       <label class="auth disab">Inventaire</label><br>
+        <input type="radio" name="endpoint" value="characters/:id/recipes">         <label class="auth disab">Recettes</label><br>
+        <input type="radio" name="endpoint" value="characters/:id/specializations"> <label class="auth disab">Spécialisations</label><br>
       <input type="radio" name="endpoint" value="colors">                           <label class="locAw">Couleurs</label><br>
       <input type="radio" name="endpoint" value="commerce/exchange">                <label>Échange</label><br>
       <input type="radio" name="endpoint" value="commerce/listings">                <label>Listes</label><br>
@@ -70,18 +71,17 @@
       <input type="radio" name="endpoint" value="items">                            <label class="locAw">Objets</label><br>
       <input type="radio" name="endpoint" value="itemstats">                        <label class="locAw disab">Stat. d'objets</label><br>
       <input type="radio" name="endpoint" value="leaderboards">                     <label class="disab">Classements</label><br>
+      <input type="radio" name="endpoint" value="legends">                          <label>Légendes</label><br>
       <input type="radio" name="endpoint" value="maps">                             <label class="locAw">Cartes</label><br>
       <input type="radio" name="endpoint" value="materials">                        <label class="locAw">Matériaux</label><br>
       <input type="radio" name="endpoint" value="minis">                            <label class="locAw">Miniatures</label><br>
-      <input type="radio" name="endpoint" value="pets">                             <label class="locAw disab">Familiers</label><br>
-      <input type="radio" name="endpoint" value="professions">                      <label class="locaw">Professions</label><br>
-      <input type="radio" name="endpoint" value="pvp">                              <label class="auth">JcJ</label><br>
+      <input type="radio" name="endpoint" value="pets">                             <label class="locAw">Familiers</label><br>
+      <input type="radio" name="endpoint" value="professions">                      <label class="locAw">Professions</label><br>
+      <input type="radio" name="endpoint" value="pvp">                              <label>JcJ</label><br>
+        <input type="radio" name="endpoint" value="pvp/amulets">                    <label class="locAw">Amulettes</label><br>
         <input type="radio" name="endpoint" value="pvp/games">                      <label class="auth">Parties JcJ</label><br>
-        <input type="radio" name="endpoint" value="pvp/games/:id">                  <label class="auth">Parties JcJ:id</label><br>
-        <input type="radio" name="endpoint" value="pvp/seasons">                    <label class="locaw">Saisons</label><br>
-        <input type="radio" name="endpoint" value="pvp/seasons/:id">                <label class="">Saisons:id</label><br>
-        <input type="radio" name="endpoint" value="pvp/standings">                  <label class="">Standings</label><br>
-        <input type="radio" name="endpoint" value="pvp/standings/:id">              <label class="">Standings:id</label><br>
+        <input type="radio" name="endpoint" value="pvp/seasons">                    <label class="locAw">Saisons</label><br>
+        <input type="radio" name="endpoint" value="pvp/standings">                  <label class="auth">Standings</label><br>
         <input type="radio" name="endpoint" value="pvp/stats">                      <label class="auth">Stat. JcJ</label><br>
       <input type="radio" name="endpoint" value="quaggans">                         <label>Quaggans</label><br>
       <input type="radio" name="endpoint" value="recipes">                          <label>Recettes</label><br>
@@ -89,6 +89,7 @@
       <input type="radio" name="endpoint" value="skills">                           <label class="locAw">Compétences</label><br>
       <input type="radio" name="endpoint" value="skins">                            <label class="locAw">Apparences</label><br>
       <input type="radio" name="endpoint" value="specializations">                  <label class="locAw">Spécialisations</label><br>
+      <input type="radio" name="endpoint" value="titles">                           <label class="disab">Titres</label><br>
       <input type="radio" name="endpoint" value="tokeninfo">                        <label class="auth">Info. clé</label><br>
       <input type="radio" name="endpoint" value="traits">                           <label class="locAw">Aptitudes</label><br>
       <input type="radio" name="endpoint" value="worlds">                           <label class="locAw">Mondes</label><br>
@@ -99,9 +100,9 @@
     <br><br>
     <div id="legend">
       <ul>Légende :
-        <li class="locAw">Local aware</li>
-        <li class="disab">Disabled</li>
-        <li class="auth">Auth required</li>
+        <li class="locAw">Langues</li>
+        <li class="disab">Désactivé</li>
+        <li class="auth">Auth. requise</li>
       </ul>
     </div>
   </div>

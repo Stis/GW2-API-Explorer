@@ -45,13 +45,16 @@ $(window).load(function() {
     location.reload();
   });
   $(".flag").click(function() {
-    $(".flag").addClass("disab");
-    $(this).removeClass("disab");
+    $(this).siblings().addClass("disab");
+    $(this).is(":not(.disab)") ? $(this).addClass("disab") : $(this).removeClass("disab");
+    getData();
   });
-  $("input").change(function() {
-    var params = {};
-    if ($("#ids").val() !== "") {params.ids = $("#ids").val();}
-    if ($(".flag:not(.disab)").length > 0) {params.lang = $(".flag:not(.disab)").attr("lang");}
-    accounts[$("input[name=compte]:checked").val()].get($("input[name=endpoint]:checked").val(),params).then(result => {$("#content").html($("<pre/>").html(syntaxHighlight(result)));});
-  });
+  $("input").change(getData);
 });
+
+function getData() {
+  var params = {};
+  if ($("#ids").val() !== "") {params.ids = $("#ids").val();}
+  if ($(".flag:not(.disab)").length > 0) {params.lang = $(".flag:not(.disab)").attr("lang");}
+  accounts[$("input[name=compte]:checked").val()].get($("input[name=endpoint]:checked").val(),params).then(result => {$("#content").html($("<pre/>").html(syntaxHighlight(result)));});
+}
