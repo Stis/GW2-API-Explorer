@@ -63,3 +63,6 @@ ul { margin-left: -20px; }
     margin: 4px -2px 0 -2px;
 }
 #delKeys { border-radius: 0 9px 9px 0; }
+.hidden {
+    display: none;
+}

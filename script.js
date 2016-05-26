@@ -25,7 +25,14 @@ var guids = JSON.parse(localStorage.getItem("guids") || "[]");
 var accounts = { undefined: new Api() };
 $.each(guids, function(i, key) {
   accounts[key] = new Api({key:key});
-  accounts[key].get("Account").then(result => {$("#comptes").append("<input type=\"radio\" name=\"compte\" value=\""+key+"\">"+result.name+"<br>");});
+  accounts[key].get("account").then(result => {$("#comptes").append("<input type=\"radio\" name=\"compte\" value=\""+key+"\"><label>"+result.name+"</label><br>");});
+  // accounts[key].get("characters").then(result => {
+  //   var thediv = $("<ul/>").addClass("persos hidden");
+  //   $.each(result, function(i, perso) {
+  //     thediv.append("<li>     <input type=\"radio\" name=\"perso\" value=\""+perso+"\"><label>"+perso+"</label></li>");
+  //   });
+  //   $("#comptes").append($("<li/>").append(thediv));
+  // });
 });
 
 $(window).load(function() {
@@ -50,6 +57,10 @@ $(window).load(function() {
     getData();
   });
   $("input").change(getData);
+  // $("[name=compte] + label").click(function() {
+  //   $(".persos").addClass("hidden");
+  //   $(this).find("div").removeClass("hidden");
+  // });
 });
 
 function getData() {
