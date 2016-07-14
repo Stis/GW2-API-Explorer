@@ -29,9 +29,12 @@
         <input type="radio" name="endpoint" value="account/achievements">           <label class="auth">Succès</label><br>
         <input type="radio" name="endpoint" value="account/bank">                   <label class="auth">Banque</label><br>
         <input type="radio" name="endpoint" value="account/dyes">                   <label class="auth">Teintures</label><br>
+        <input type="radio" name="endpoint" value="account/finishers">              <label class="auth disab">Coups de grâce</label><br>
         <input type="radio" name="endpoint" value="account/inventory">              <label class="auth">Slots partagés</label><br>
+        <input type="radio" name="endpoint" value="account/masteries">              <label class="auth disab">Maîtrises</label><br>
         <input type="radio" name="endpoint" value="account/materials">              <label class="auth">Matériaux</label><br>
         <input type="radio" name="endpoint" value="account/minis">                  <label class="auth">Miniatures</label><br>
+        <input type="radio" name="endpoint" value="account/outfits">                <label class="auth">Tenues</label><br>
         <input type="radio" name="endpoint" value="account/skins">                  <label class="auth">Garde-robe</label><br>
         <input type="radio" name="endpoint" value="account/titles">                 <label class="auth">Titres</label><br>
         <input type="radio" name="endpoint" value="account/wallet">                 <label class="auth">Portefeuille</label><br>
@@ -40,17 +43,19 @@
         <input type="radio" name="endpoint" value="achievements/daily">             <label>Quotidien</label><br>
           <input type="radio" name="endpoint" value="achievements/daily/tomorrow">  <label>Lendemain</label><br>
         <input type="radio" name="endpoint" value="achievements/groups">            <label class="locAw">Groupes</label><br>
-      <input type="radio" name="endpoint" value="backstory/answers">                <label class="disab">Hist. perso. choix</label><br>
-      <input type="radio" name="endpoint" value="backstory/questions">              <label class="disab">Hist. perso. questions</label><br>
+      <input type="radio" name="endpoint" value="backstory/answers">                <label class="locAw">Hist. perso. choix</label><br>
+      <input type="radio" name="endpoint" value="backstory/questions">              <label class="locAw">Hist. perso. questions</label><br>
       <input type="radio" name="endpoint" value="build">                            <label>Version</label><br>
       <input type="radio" name="endpoint" value="characters">                       <label class="auth">Personnages</label><br>
-        <input type="radio" name="endpoint" value="characters/:id/backstory">       <label class="auth disab">Hist. perso.</label><br>
+        <input type="radio" name="endpoint" value="characters/:id/backstory">       <label class="auth">Hist. perso.</label><br>
         <input type="radio" name="endpoint" value="characters/:id/core">            <label class="auth">Carte d'id.</label><br>
         <input type="radio" name="endpoint" value="characters/:id/crafting">        <label class="auth">Artisanat</label><br>
         <input type="radio" name="endpoint" value="characters/:id/equipment">       <label class="auth">Équipement</label><br>
+        <input type="radio" name="endpoint" value="characters/:id/heropoints">      <label class="auth disab">Points de héros</label><br>
         <input type="radio" name="endpoint" value="characters/:id/inventory">       <label class="auth">Inventaire</label><br>
         <input type="radio" name="endpoint" value="characters/:id/recipes">         <label class="auth">Recettes</label><br>
         <input type="radio" name="endpoint" value="characters/:id/specializations"> <label class="auth">Spécialisations</label><br>
+        <input type="radio" name="endpoint" value="characters/:id/training">        <label class="auth disab">Entrainement</label><br>
       <input type="radio" name="endpoint" value="colors">                           <label class="locAw">Couleurs</label><br>
       <input type="radio" name="endpoint" value="commerce/exchange">                <label>Échange</label><br>
       <input type="radio" name="endpoint" value="commerce/listings">                <label>Listes</label><br>
@@ -62,6 +67,7 @@
       <input type="radio" name="endpoint" value="events">                           <label class="locAw disab">Évènements</label><br>
       <input type="radio" name="endpoint" value="events-state">                     <label class="disab">État d'évènement</label><br>
       <input type="radio" name="endpoint" value="files">                            <label>Fichiers</label><br>
+      <input type="radio" name="endpoint" value="finishers">                        <label class="locAw">Coups de grâce</label><br>
       <input type="radio" name="endpoint" value="guild/:id">                        <label class="disab">Guilde</label><br>
         <input type="radio" name="endpoint" value="guild/:id/log">                  <label>Journal</label><br>
         <input type="radio" name="endpoint" value="guild/:id/members">              <label class="auth">Membres</label><br>
@@ -75,11 +81,12 @@
         <input type="radio" name="endpoint" value="guild/upgrades">                 <label class="locAw">Améliorations</label><br>
       <input type="radio" name="endpoint" value="items">                            <label class="locAw">Objets</label><br>
       <input type="radio" name="endpoint" value="itemstats">                        <label class="locAw">Stat. d'objets</label><br>
-      <input type="radio" name="endpoint" value="leaderboards">                     <label class="disab">Classements</label><br>
       <input type="radio" name="endpoint" value="legends">                          <label>Légendes</label><br>
       <input type="radio" name="endpoint" value="maps">                             <label class="locAw">Cartes</label><br>
+      <input type="radio" name="endpoint" value="masteries">                        <label class="locAw disab">Maitrises</label><br>
       <input type="radio" name="endpoint" value="materials">                        <label class="locAw">Matériaux</label><br>
       <input type="radio" name="endpoint" value="minis">                            <label class="locAw">Miniatures</label><br>
+      <input type="radio" name="endpoint" value="outfits">                          <label class="locAw disab">Tenues</label><br>
       <input type="radio" name="endpoint" value="pets">                             <label class="locAw">Familiers</label><br>
       <input type="radio" name="endpoint" value="professions">                      <label class="locAw">Professions</label><br>
       <input type="radio" name="endpoint" value="pvp">                              <label>JcJ</label><br>
@@ -94,8 +101,8 @@
       <input type="radio" name="endpoint" value="skills">                           <label class="locAw">Compétences</label><br>
       <input type="radio" name="endpoint" value="skins">                            <label class="locAw">Apparences</label><br>
       <input type="radio" name="endpoint" value="specializations">                  <label class="locAw">Spécialisations</label><br>
-      <input type="radio" name="endpoint" value="stories">                          <label class="disab">Histoires</label><br>
-        <input type="radio" name="endpoint" value="stories/seasons">                <label class="disab">Saisons</label><br>
+      <input type="radio" name="endpoint" value="stories">                          <label class="locAw">Histoires</label><br>
+        <input type="radio" name="endpoint" value="stories/seasons">                <label class="locAw">Saisons</label><br>
       <input type="radio" name="endpoint" value="titles">                           <label class="locAw">Titres</label><br>
       <input type="radio" name="endpoint" value="tokeninfo">                        <label class="auth">Info. clé</label><br>
       <input type="radio" name="endpoint" value="traits">                           <label class="locAw">Aptitudes</label><br>
