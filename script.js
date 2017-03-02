@@ -21,21 +21,36 @@ function syntaxHighlight(json) {
   });
 }
 
+
+function getURL(endPoint, key, params) {
+  var startURL = "https://api.guildwars2.com/v2/";
+  var url = startURL + endPoint + "?1";
+  key ? url += "&access_token=" + key : "";
+  if (params) {
+    params.ids ? url += "&ids=" + params.ids : "";
+    params.lang ? url += "&lang=" + params.lang : "";
+    params.cid ? url = url.replace(":id", params.cid) : "";
+    params.cbo ? url = url.replace(":board", params.cbo) : "";
+    params.cre ? url = url.replace(":region", params.cre) : "";
+  }
+  return url;
+}
+
 var guids = JSON.parse(localStorage.getItem("guids") || "[]");
-var accounts = { undefined: new Api() };
 $.each(guids, function(i, key) {
-  accounts[key] = new Api({key:key});
-  accounts[key].get("account").then(result => {$("#comptes").append("<input type=\"radio\" name=\"compte\" value=\""+key+"\"><label>"+result.name+"</label><br>");});
-  // accounts[key].get("characters").then(result => {
-  //   var thediv = $("<ul/>").addClass("persos hidden");
-  //   $.each(result, function(i, perso) {
-  //     thediv.append("<li>     <input type=\"radio\" name=\"perso\" value=\""+perso+"\"><label>"+perso+"</label></li>");
-  //   });
-  //   $("#comptes").append($("<li/>").append(thediv));
-  // });
+  $.getJSON(getURL("account", key), function(accData) {
+    $("#comptes").append("<input type=\"radio\" name=\"compte\" value=\""+key+"\"><label>"+accData.name+"</label><br>");
+    $.getJSON(getURL("characters", key), function(result) {
+      var thediv = $("<persos/>").addClass("hidden");
+      $.each(result, function(i, perso) {
+        thediv.append("   <input type=\"radio\" name=\"perso\" value=\""+perso+"\"><label>"+perso+"</label><br>");
+      });
+      $("input[value=\""+key+"\"] + label + br").after(thediv);
+    });
+  });
 });
 
-$(window).load(function() {
+$(window).on("load", function() {
   if (guids) {
     $.each(guids, function(i, key) {
       $("#keyList").append(key+"\n");
@@ -57,15 +72,21 @@ $(window).load(function() {
     getData();
   });
   $("input").change(getData);
-  // $("[name=compte] + label").click(function() {
-  //   $(".persos").addClass("hidden");
-  //   $(this).find("div").removeClass("hidden");
-  // });
+  $("input[name=\"compte\"] + label").click(function() {
+    $("persos").addClass("hidden");
+    $(this).next().next("persos").removeClass("hidden");
+  });
 });
 
 function getData() {
-  var params = {};
-  if ($("#ids").val() !== "") {params.ids = $("#ids").val();}
-  if ($(".flag:not(.disab)").length > 0) {params.lang = $(".flag:not(.disab)").attr("lang");}
-  accounts[$("input[name=compte]:checked").val()].get($("input[name=endpoint]:checked").val(),params).then(result => {$("#content").html($("<pre/>").html(syntaxHighlight(result)));});
+    var params = {
+        lang: $(".flag:not(.disab)").attr("lang"),
+        ids: $("#ids").val(),
+        cid: $("#cid").val(),
+        cbo: $("#cbo").val(),
+        cre: $("#cre").val()
+    };
+  $.getJSON(getURL($("input[name=endpoint]:checked").next().text(), $("input[name=compte]:checked").val(), params), function(data) {
+    $("#content").html($("<pre/>").html(syntaxHighlight(data)));
+  });
 }

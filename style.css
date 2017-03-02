@@ -1,33 +1,33 @@
 @font-face {
-    font-family: "CronosPro";
-    src: url("font/cronospro-regular-webfont.woff") format("woff");
-    font-weight: normal;
+    font-family: CronosPro;
     font-style: normal;
-}
-@font-face {
-    font-family: "CronosPro";
-    src: url("font/cronospro-italic-webfont.woff") format("woff");
     font-weight: normal;
-    font-style: italic;
+    src: url(font/cronospro-regular-webfont.woff) format("woff");
 }
 @font-face {
-    font-family: "CronosPro";
-    src: url("font/cronospro-semibold-webfont.woff") format("woff");
-    font-weight: bold;
+    font-family: CronosPro;
+    font-style: italic;
+    font-weight: normal;
+    src: url(font/cronospro-italic-webfont.woff) format("woff");
+}
+@font-face {
+    font-family: CronosPro;
     font-style: normal;
+    font-weight: bold;
+    src: url(font/cronospro-semibold-webfont.woff) format("woff");
 }
 @font-face {
-    font-family: "CronosPro";
-    src: url("font/cronospro-semibolditalic-webfont.woff") format("woff");
-    font-weight: bold;
+    font-family: CronosPro;
     font-style: italic;
+    font-weight: bold;
+    src: url(font/cronospro-semibolditalic-webfont.woff) format("woff");
 }
 * {
     font-family: CronosPro;
 }
 body {
   background-color: #555;
-  color: #CACACA;
+  color: #cacaca;
 }
 #menu {
   position: fixed;
@@ -36,33 +36,39 @@ body {
   bottom: 0;
   overflow: auto;
   background-color: #444;
-  min-width: 160px;
+  min-width: 330px;
+  padding-left: 10px;
 }
-ul { margin-left: -20px; }
-.locAw { color: #00FF00; }
+.auth { text-decoration: underline; }
+.locAw { color: #00ff00; }
 .disab { opacity: .4; text-decoration: line-through; }
-.auth { font-weight : bold; }
-#content { margin-left: 200px; }
-.string { color: #2ECC70; }
-.number { color: #FF6100; }
-.boolean { color: #FF99FF; }
-.null { color: #AAA; }
-.key { color: #FFF; }
+.disab.auth { text-decoration: underline line-through; }
+#content { margin-left: 360px; }
+.string { color: #2ecc70; }
+.number { color: #ff6100; }
+.boolean { color: #ff99ff; }
+.null { color: #aaa; }
+.key { color: #fff; }
 #keyList {
     height: 95px;
     width: 724px;
-    background-color: #CCC;
+    background-color: #ccc;
     border: none;
+    border-radius: 8px;
 }
-#saveKeys, #delKeys {
+#saveKeys,
+#delKeys {
     cursor: pointer;
-    background-color: #CCC;
     border: none;
-    border-radius: 9px 0 0 9px;
-    padding: 1px;
+    border-radius: 8px 0 0 8px;
+    padding: 1px 1px 1px 11px;
     margin: 4px -2px 0 -2px;
+    background-color: #ccc;
 }
-#delKeys { border-radius: 0 9px 9px 0; }
+#delKeys {
+    border-radius: 0 8px 8px 0;
+    padding: 1px 11px 1px 1px;
+}
 .hidden {
     display: none;
 }
