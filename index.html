@@ -11,139 +11,141 @@
 <body>
 <div id="menu">
     <div id="langues">
-        <img class="flag disab" lang="en" alt="English" title="English" src="img/en.png" />
-        <img class="flag disab" lang="es" alt="Español" title="Español" src="img/es.png" />
-        <img class="flag disab" lang="de" alt="Deutsch" title="Deutsch" src="img/de.png" />
-        <img class="flag disab" lang="fr" alt="Français" title="Français" src="img/fr.png" />
-        <img class="flag disab" lang="ko" alt="???" title="???" src="img/ko.png" />
-        <img class="flag disab" lang="zh" alt="??" title="??" src="img/zh.png" />
+        <img class="flag d" lang="en" alt="English" title="English" src="img/en.png" />
+        <img class="flag d" lang="es" alt="Español" title="Español" src="img/es.png" />
+        <img class="flag d" lang="de" alt="Deutsch" title="Deutsch" src="img/de.png" />
+        <img class="flag d" lang="fr" alt="Français" title="Français" src="img/fr.png" />
+        <img class="flag d" lang="ko" alt="???" title="???" src="img/ko.png" />
+        <img class="flag d" lang="zh" alt="??" title="??" src="img/zh.png" />
     </div>
-    <div id="comptes">
-        <dummy class="hidden"><input type="radio" name="compte"><label></label><br></dummy>
-    </div>
+    <div id="comptes"></div>
     <br>
     <div id="params"><input id="ids" type="text" placeholder="IDs"></div>
     <div id="params"><input id="cid" type="text" placeholder=":id"></div>
     <div id="params"><input id="cbo" type="text" placeholder=":board"></div>
     <div id="params"><input id="cre" type="text" placeholder=":region"></div>
     <br>
-    <div id="endpoints">
-        <input type="radio" name="endpoint"><label     class="auth"       >account</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >account/achievements</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >account/bank</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >account/dungeons</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >account/dyes</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >account/finishers</label><br>
-          <input type="radio" name="endpoint"><label   class="auth disab" >account/gliders</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >account/home/cats</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >account/home/nodes</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >account/inventory</label><br>
-          <input type="radio" name="endpoint"><label   class="auth disab" >account/mailcarriers</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >account/masteries</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >account/materials</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >account/minis</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >account/outfits</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >account/raids</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >account/recipes</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >account/skins</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >account/titles</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >account/wallet</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >achievements</label><br>
-          <input type="radio" name="endpoint"><label   class="locAw"      >achievements/categories</label><br>
-          <input type="radio" name="endpoint"><label                      >achievements/daily</label><br>
-            <input type="radio" name="endpoint"><label                    >achievements/daily/tomorrow</label><br>
-          <input type="radio" name="endpoint"><label   class="locAw"      >achievements/groups</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw disab">adventures</label><br>
-          <input type="radio" name="endpoint"><label   class="disab"      >adventures/:id/leaderboards</label><br>
-          <input type="radio" name="endpoint"><label   class="disab"      >adventures/:id/leaderboards/:board/:region</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >backstory/answers</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >backstory/questions</label><br>
-        <input type="radio" name="endpoint"><label                        >build</label><br>
-        <input type="radio" name="endpoint"><label     class="auth"       >characters</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >characters/:id/backstory</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >characters/:id/core</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >characters/:id/crafting</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >characters/:id/equipment</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >characters/:id/heropoints</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >characters/:id/inventory</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >characters/:id/recipes</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >characters/:id/skills</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >characters/:id/specializations</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >characters/:id/training</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >colors</label><br>
-        <input type="radio" name="endpoint"><label                        >commerce/exchange</label><br>
-        <input type="radio" name="endpoint"><label                        >commerce/listings</label><br>
-        <input type="radio" name="endpoint"><label                        >commerce/prices</label><br>
-        <input type="radio" name="endpoint"><label     class="auth"       >commerce/transactions</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >continents</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >currencies</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >dungeons</label><br>
-        <input type="radio" name="endpoint"><label                        >emblem</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw disab">events</label><br>
-        <input type="radio" name="endpoint"><label     class="disab"      >events-state</label><br>
-        <input type="radio" name="endpoint"><label                        >files</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >finishers</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw disab">gliders</label><br>
-        <input type="radio" name="endpoint"><label     class="auth"       >guild/:id</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >guild/:id/log</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >guild/:id/members</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >guild/:id/ranks</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >guild/:id/stash</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >guild/:id/teams</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >guild/:id/treasury</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >guild/:id/upgrades</label><br>
-          <input type="radio" name="endpoint"><label   class="locAw"      >guild/permissions</label><br>
-          <input type="radio" name="endpoint"><label                      >guild/search</label><br>
-          <input type="radio" name="endpoint"><label   class="locAw"      >guild/upgrades</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >items</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >itemstats</label><br>
-        <input type="radio" name="endpoint"><label                        >legends</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw disab">mailcarriers</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >maps</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >masteries</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >materials</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >minis</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >outfits</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >pets</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >professions</label><br>
-        <input type="radio" name="endpoint"><label                        >pvp</label><br>
-          <input type="radio" name="endpoint"><label   class="locAw"      >pvp/amulets</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >pvp/games</label><br>
-          <input type="radio" name="endpoint"><label   class="locAw"      >pvp/ranks</label><br>
-          <input type="radio" name="endpoint"><label   class="locAw"      >pvp/seasons</label><br>
-          <input type="radio" name="endpoint"><label                      >pvp/seasons/:id/leaderboards</label><br>
-          <input type="radio" name="endpoint"><label                      >pvp/seasons/:id/leaderboards/:board/:region</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >pvp/standings</label><br>
-          <input type="radio" name="endpoint"><label   class="auth"       >pvp/stats</label><br>
-        <input type="radio" name="endpoint"><label                        >quaggans</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >races</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >raids</label><br>
-        <input type="radio" name="endpoint"><label                        >recipes</label><br>
-          <input type="radio" name="endpoint"><label                      >recipes/search</label><br><!-- input ou output au lieu de ids -->
-        <input type="radio" name="endpoint"><label     class="locAw"      >skills</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >skins</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >specializations</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >stories</label><br>
-          <input type="radio" name="endpoint"><label   class="locAw"      >stories/seasons</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >titles</label><br>
-        <input type="radio" name="endpoint"><label     class="auth"       >tokeninfo</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >traits</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >worlds</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >wvw/abilities </label><br>
-        <input type="radio" name="endpoint"><label                        >wvw/matches</label><br>
-          <input type="radio" name="endpoint"><label                      >www/matches/overview</label><br>
-          <input type="radio" name="endpoint"><label                      >www/matches/scores</label><br>
-          <input type="radio" name="endpoint"><label                      >www/matches/stats</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >wvw/objectives</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >wvw/ranks</label><br>
-        <input type="radio" name="endpoint"><label     class="locAw"      >wvw/upgrades</label><br>
+    <div id="eps">
+        <label class="a"    ><input type="radio" name="ep">account</label><br>
+        <label class="a"    ><input type="radio" name="ep">account/achievements</label><br>
+        <label class="a"    ><input type="radio" name="ep">account/bank</label><br>
+        <label class="a"    ><input type="radio" name="ep">account/dungeons</label><br>
+        <label class="a"    ><input type="radio" name="ep">account/dyes</label><br>
+        <label class="a"    ><input type="radio" name="ep">account/finishers</label><br>
+        <label class="a"    ><input type="radio" name="ep">account/gliders</label><br>
+        <label class="a"    ><input type="radio" name="ep">account/home/cats</label><br>
+        <label class="a"    ><input type="radio" name="ep">account/home/nodes</label><br>
+        <label class="a"    ><input type="radio" name="ep">account/inventory</label><br>
+        <label class="a d"  ><input type="radio" name="ep">account/mailcarriers</label><br>
+        <label class="a"    ><input type="radio" name="ep">account/masteries</label><br>
+        <label class="a"    ><input type="radio" name="ep">account/materials</label><br>
+        <label class="a"    ><input type="radio" name="ep">account/minis</label><br>
+        <label class="a"    ><input type="radio" name="ep">account/outfits</label><br>
+        <label class="a d"  ><input type="radio" name="ep">account/pvp/heroes</label><br>
+        <label class="a"    ><input type="radio" name="ep">account/raids</label><br>
+        <label class="a"    ><input type="radio" name="ep">account/recipes</label><br>
+        <label class="a"    ><input type="radio" name="ep">account/skins</label><br>
+        <label class="a"    ><input type="radio" name="ep">account/titles</label><br>
+        <label class="a"    ><input type="radio" name="ep">account/wallet</label><br>
+        <label class="l"    ><input type="radio" name="ep">achievements</label><br>
+        <label class="l"    ><input type="radio" name="ep">achievements/categories</label><br>
+        <label              ><input type="radio" name="ep">achievements/daily</label><br>
+        <label              ><input type="radio" name="ep">achievements/daily/tomorrow</label><br>
+        <label class="l"    ><input type="radio" name="ep">achievements/groups</label><br>
+        <label class="l d"  ><input type="radio" name="ep">adventures</label><br>
+        <label class="d"    ><input type="radio" name="ep">adventures/:id/leaderboards</label><br>
+        <label class="d"    ><input type="radio" name="ep">adventures/:id/leaderboards/:board/:region</label><br>
+        <label class="l"    ><input type="radio" name="ep">backstory/answers</label><br>
+        <label class="l"    ><input type="radio" name="ep">backstory/questions</label><br>
+        <label              ><input type="radio" name="ep">build</label><br>
+        <label class="a"    ><input type="radio" name="ep">characters</label><br>
+        <label class="a"    ><input type="radio" name="ep">characters/:id/backstory</label><br>
+        <label class="a"    ><input type="radio" name="ep">characters/:id/core</label><br>
+        <label class="a"    ><input type="radio" name="ep">characters/:id/crafting</label><br>
+        <label class="a d"  ><input type="radio" name="ep">characters/:id/dungeons</label><br>
+        <label class="a"    ><input type="radio" name="ep">characters/:id/equipment</label><br>
+        <label class="a"    ><input type="radio" name="ep">characters/:id/heropoints</label><br>
+        <label class="a"    ><input type="radio" name="ep">characters/:id/inventory</label><br>
+        <label class="a"    ><input type="radio" name="ep">characters/:id/recipes</label><br>
+        <label class="a"    ><input type="radio" name="ep">characters/:id/skills</label><br>
+        <label class="a"    ><input type="radio" name="ep">characters/:id/specializations</label><br>
+        <label class="a"    ><input type="radio" name="ep">characters/:id/training</label><br>
+        <label class="l"    ><input type="radio" name="ep">colors</label><br>
+        <label              ><input type="radio" name="ep">commerce/exchange</label><br>
+        <label              ><input type="radio" name="ep">commerce/listings</label><br>
+        <label              ><input type="radio" name="ep">commerce/prices</label><br>
+        <label class="a"    ><input type="radio" name="ep">commerce/transactions</label><br>
+        <label class="l"    ><input type="radio" name="ep">continents</label><br>
+        <label class="l"    ><input type="radio" name="ep">currencies</label><br>
+        <label class="l"    ><input type="radio" name="ep">dungeons</label><br>
+        <label              ><input type="radio" name="ep">emblem</label><br>
+        <label class="l d"  ><input type="radio" name="ep">events</label><br>
+        <label class="d"    ><input type="radio" name="ep">events-state</label><br>
+        <label              ><input type="radio" name="ep">files</label><br>
+        <label class="l"    ><input type="radio" name="ep">finishers</label><br>
+        <label class="l"    ><input type="radio" name="ep">gliders</label><br>
+        <label class="a"    ><input type="radio" name="ep">guild/:id</label><br>
+        <label class="a"    ><input type="radio" name="ep">guild/:id/log</label><br>
+        <label class="a"    ><input type="radio" name="ep">guild/:id/members</label><br>
+        <label class="a"    ><input type="radio" name="ep">guild/:id/ranks</label><br>
+        <label class="a"    ><input type="radio" name="ep">guild/:id/stash</label><br>
+        <label class="a d"  ><input type="radio" name="ep">guild/:id/storage</label><br>
+        <label class="a"    ><input type="radio" name="ep">guild/:id/teams</label><br>
+        <label class="a"    ><input type="radio" name="ep">guild/:id/treasury</label><br>
+        <label class="a"    ><input type="radio" name="ep">guild/:id/upgrades</label><br>
+        <label class="l"    ><input type="radio" name="ep">guild/permissions</label><br>
+        <label              ><input type="radio" name="ep">guild/search</label><br>
+        <label class="l"    ><input type="radio" name="ep">guild/upgrades</label><br>
+        <label class="l"    ><input type="radio" name="ep">items</label><br>
+        <label class="l"    ><input type="radio" name="ep">itemstats</label><br>
+        <label              ><input type="radio" name="ep">legends</label><br>
+        <label class="l d"  ><input type="radio" name="ep">mailcarriers</label><br>
+        <label class="l"    ><input type="radio" name="ep">maps</label><br>
+        <label class="l"    ><input type="radio" name="ep">masteries</label><br>
+        <label class="l"    ><input type="radio" name="ep">materials</label><br>
+        <label class="l"    ><input type="radio" name="ep">minis</label><br>
+        <label class="l"    ><input type="radio" name="ep">outfits</label><br>
+        <label class="l"    ><input type="radio" name="ep">pets</label><br>
+        <label class="l"    ><input type="radio" name="ep">professions</label><br>
+        <label              ><input type="radio" name="ep">pvp</label><br>
+        <label class="l"    ><input type="radio" name="ep">pvp/amulets</label><br>
+        <label class="a"    ><input type="radio" name="ep">pvp/games</label><br>
+        <label class="l"    ><input type="radio" name="ep">pvp/ranks</label><br>
+        <label class="l d"  ><input type="radio" name="ep">pvp/heroes</label><br>
+        <label class="l"    ><input type="radio" name="ep">pvp/seasons</label><br>
+        <label              ><input type="radio" name="ep">pvp/seasons/:id/leaderboards</label><br>
+        <label              ><input type="radio" name="ep">pvp/seasons/:id/leaderboards/:board/:region</label><br>
+        <label class="a"    ><input type="radio" name="ep">pvp/standings</label><br>
+        <label class="a"    ><input type="radio" name="ep">pvp/stats</label><br>
+        <label              ><input type="radio" name="ep">quaggans</label><br>
+        <label class="l"    ><input type="radio" name="ep">races</label><br>
+        <label class="l"    ><input type="radio" name="ep">raids</label><br>
+        <label              ><input type="radio" name="ep">recipes</label><br>
+        <label              ><input type="radio" name="ep">recipes/search</label><br><!-- input ou output au lieu de ids -->
+        <label class="l"    ><input type="radio" name="ep">skills</label><br>
+        <label class="l"    ><input type="radio" name="ep">skins</label><br>
+        <label class="l"    ><input type="radio" name="ep">specializations</label><br>
+        <label class="l"    ><input type="radio" name="ep">stories</label><br>
+        <label class="l"    ><input type="radio" name="ep">stories/seasons</label><br>
+        <label class="l"    ><input type="radio" name="ep">titles</label><br>
+        <label class="a"    ><input type="radio" name="ep">tokeninfo</label><br>
+        <label class="l"    ><input type="radio" name="ep">traits</label><br>
+        <label class="l"    ><input type="radio" name="ep">worlds</label><br>
+        <label class="l"    ><input type="radio" name="ep">wvw/abilities </label><br>
+        <label              ><input type="radio" name="ep">wvw/matches</label><br>
+        <label              ><input type="radio" name="ep">www/matches/overview</label><br>
+        <label              ><input type="radio" name="ep">www/matches/scores</label><br>
+        <label              ><input type="radio" name="ep">www/matches/stats</label><br>
+        <label class="l"    ><input type="radio" name="ep">wvw/objectives</label><br>
+        <label class="l"    ><input type="radio" name="ep">wvw/ranks</label><br>
+        <label class="l"    ><input type="radio" name="ep">wvw/upgrades</label><br>
     </div>
     <br><br>
     <div id="legend">
         <ul>Légende :
-            <li class="auth">Clé API requise</li>
-            <li class="locAw">Langues</li>
-            <li class="disab">Désactivé</li>
+            <li class="a">Clé API requise</li>
+            <li class="l">Langues</li>
+            <li class="d">Désactivé</li>
         </ul>
     </div>
 </div>
