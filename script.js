@@ -23,9 +23,8 @@ function syntaxHighlight(json) {
 
 
 function getURL(endPoint, key, params) {
-    var startURL = "https://api.guildwars2.com/v2/";
-    var url = startURL + endPoint + "?1";
-    key ? url += "&access_token=" + key : "";
+    var url = "https://api.guildwars2.com"+endPoint+"?1";
+    key ? url += "&access_token="+key : "";
     if (params) {
         params.ids ? url += "&ids=" + params.ids : "";
         params.lang ? url += "&lang=" + params.lang : "";
@@ -38,17 +37,26 @@ function getURL(endPoint, key, params) {
 
 var guids = JSON.parse(localStorage.getItem("guids") || "[]");
 $.each(guids, function(i, key) {
-    $.getJSON(getURL("account", key), function(accData) {
+    $.getJSON(getURL("/v2/account", key), function(accData) {
         $("#comptes").append("<label><input type=\"radio\" name=\"compte\" value=\""+key+"\">"+accData.name+"</label><br>");
-        $.getJSON(getURL("characters", key), function(result) {
+        $.getJSON(getURL("/v2/characters", key), function(result) {
             var thediv = $("<persos/>").addClass("hidden");
             $.each(result, function(i, perso) {
-                thediv.append("   <label><input type=\"radio\" name=\"perso\" value=\""+perso+"\">"+perso+"</label><br>");
+                thediv.append("<label><input type=\"radio\" name=\"perso\" value=\""+perso+"\">"+perso+"</label><br>");
             });
             $("input[value=\""+key+"\"]").parent().next("br").after(thediv);
         }).done(addEv);
     });
 });
+
+$.getJSON("https://api.guildwars2.com/v2.json", function(data) {
+    $.each(data.routes, function(i, ep) {
+        var ald = ep.lang === true ? "l" : "";
+        ald += ep.auth === true ? " a" : "";
+        ald += ep.active === true ? "" : " d";
+        $("#eps").append($("<label/>", {class: ald, text: ep.path}).prepend($("<input/>", {type: "radio", name: "ep"})), $("<br/>"));
+    });
+}).done(addEv);
 
 $(window).on("load", function() {
     if (guids) {
@@ -74,7 +82,9 @@ $(window).on("load", function() {
 });
 
 function addEv() {
+    $("input").off();
     $("input").change(getData);
+    $("label").off();
     $("input[name=\"compte\"]").parent().click(function() {
         $("input[name=\"perso\"]").prop("checked",false);
         $("persos").addClass("hidden");

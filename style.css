@@ -39,6 +39,7 @@ body {
     min-width: 330px;
     padding-left: 10px;
 }
+persos > label { margin-left: 16px; }
 .a { text-decoration: underline; }
 .l { color: #00ff00; }
 .d { opacity: .4; text-decoration: line-through; }
