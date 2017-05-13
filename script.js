@@ -102,5 +102,7 @@ function getData() {
     };
     $.getJSON(getURL($("input[name=\"ep\"]:checked").parent().text(), $("input[name=\"compte\"]:checked").val(), params), function(data) {
       $("#content").html($("<pre/>").html(syntaxHighlight(data)));
+    }).fail(function(data, err) {
+      $("#content").html($("<pre/>").html(syntaxHighlight(data.responseText)));
     });
 }
