@@ -60,19 +60,17 @@ $.getJSON("https://api.guildwars2.com/v2.json", function(data) {
 
 $(window).on("load", function() {
     if (guids) {
-        $.each(guids, function(i, key) {
-            $("#keyList").append(key+"\n");
+        $.each(guids, function() {
+            $("#keyList").append(this+"\n");
         });
         $("#keyList").html($("#keyList").val().replace(/\n$/, ""));
     }
     $("#saveKeys").click(function() {
-        guids = $("#keyList").val().replace("#","").split(/\n| |,/);
-        localStorage.setItem("guids", JSON.stringify(guids));
-        location.reload(true);
+        localStorage.setItem("guids", JSON.stringify($("#keyList").val().split(/\n| |,/)));
     });
     $("#delKeys").click(function() {
         localStorage.removeItem("guids");
-        location.reload();
+        $("#keyList").empty();
     });
     $(".flag").click(function() {
         $(this).siblings().addClass("d");
