@@ -22,8 +22,8 @@ function syntaxHighlight(json) {
 }
 
 
-function getURL(endPoint, key, params) {
-  var url = "https://api.guildwars2.com"+endPoint+"?1";
+function getURL(eP, key, params) {
+  var url = "https://api.guildwars2.com"+eP+"?1";
   key ? url += "&access_token="+key : "";
   if (params) {
     params.ids ? url += "&ids=" + params.ids : "";
@@ -31,6 +31,8 @@ function getURL(endPoint, key, params) {
     params.cid ? url = url.replace(":id", params.cid) : "";
     params.cbo ? url = url.replace(":board", params.cbo) : "";
     params.cre ? url = url.replace(":region", params.cre) : "";
+    params.cgi ? url = url.replace(":guild_id", params.cgi) : "";
+    params.cte ? url = url.replace(":team", params.cte) : "";
   }
   return url;
 }
@@ -80,27 +82,29 @@ $(window).on("load", function() {
 });
 
 function addEv() {
-    $("input").off();
-    $("input").change(getData);
-    $("label").off();
-    $("input[name=\"compte\"]").parent().click(function() {
-        $("input[name=\"perso\"]").prop("checked",false);
-        $("persos").addClass("hidden");
-        $(this).next().next("persos").removeClass("hidden");
-    });
+  $("input").off();
+  $("input").change(getData);
+  $("label").off();
+  $("input[name=\"compte\"]").parent().click(function() {
+    $("input[name=\"perso\"]").prop("checked",false);
+    $("persos").addClass("hidden");
+    $(this).next().next("persos").removeClass("hidden");
+  });
 }
 
 function getData() {
-    var params = {
-        lang: $(".flag:not(.d)").attr("lang"),
-        ids: $("#ids").val(),
-        cid: $("input[name=\"perso\"]").is(":checked") ? $("input[name=\"perso\"]:checked").val() : $("#cid").val(),
-        cbo: $("#cbo").val(),
-        cre: $("#cre").val()
-    };
-    $.getJSON(getURL($("input[name=\"ep\"]:checked").parent().text(), $("input[name=\"compte\"]:checked").val(), params), function(data) {
-      $("#content").html($("<pre/>").html(syntaxHighlight(data)));
-    }).fail(function(data, err) {
-      $("#content").html($("<pre/>").html(syntaxHighlight(data.responseText)));
-    });
+  var params = {
+    lang: $(".flag:not(.d)").attr("lang"),
+    ids: $("#ids").val(),
+    cid: $("input[name=\"perso\"]").is(":checked") ? $("input[name=\"perso\"]:checked").val() : $("#cid").val(),
+    cbo: $("#cbo").val(),
+    cre: $("#cre").val(),
+    cgi: $("#cgi").val(),
+    cte: $("#cte").val()
+  };
+  $.getJSON(getURL($("input[name=\"ep\"]:checked").parent().text(), $("input[name=\"compte\"]:checked").val(), params), function(data) {
+    $("#content").html($("<pre/>").html(syntaxHighlight(data)));
+  }).fail(function(data, err) {
+    $("#content").html($("<pre/>").html(syntaxHighlight(data.responseText)));
+  });
 }
